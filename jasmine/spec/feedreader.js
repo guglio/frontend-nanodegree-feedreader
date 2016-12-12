@@ -62,14 +62,12 @@ $(function() {
 
       // loads all the news from feeds asynchonously
       beforeEach(function(done) {
-        for (var i = 0 ; i < allFeeds.length; i++){
-          loadFeed(i, done);
-        }
+        loadFeed(0, done);
       });
 
       // check how many '.entry' elements are loaded, if the number is at leat one, pass the test
       it('there is at least one entry',function(done){
-        expect($(".feed").children().length).not.toBe(0);
+        expect($(".feed .entry").length).not.toBe(0);
         done();
       });
     });
